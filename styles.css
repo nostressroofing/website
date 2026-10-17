@@ -318,13 +318,20 @@ section.plans-section { padding-top: 0; }
 }
 @media (max-width: 760px) {
   .site-header nav { display: contents; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: auto; }
   .brand img { height: 60px; }
-  .mobile-tabs { display: flex; gap: 10px; margin: 0 auto; align-items: center; }
-  .mobile-tabs a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 13px; padding: 8px 2px; white-space: nowrap; }
-  .mobile-tabs a.active { color: var(--gold-dark); }
+  .mobile-tabs {
+    display: flex; gap: 8px; padding: 2px 16px 12px; background: #ffffff;
+  }
+  .mobile-tabs a {
+    flex: 1; text-align: center; white-space: nowrap;
+    font-size: 13px; font-weight: 700; color: #1a1a1a; text-decoration: none;
+    border: 1.5px solid var(--gold); border-radius: 999px;
+    padding: 8px 4px; background: #ffffff; line-height: 1.2;
+  }
+  .mobile-tabs a.active { background: var(--gold); color: #1a1a1a; }
   .nav-links {
-    display: none; position: absolute; top: 72px; left: 0; right: 0;
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
     background: #ffffff; flex-direction: column; align-items: stretch;
     padding: 12px 20px 20px; gap: 0; border-bottom: 1px solid #e8e8e8;
   }
