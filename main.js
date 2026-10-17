@@ -20,7 +20,7 @@
   // When empty, the form validates and shows the success message
   // without sending (preview mode).
   // ------------------------------------------------------------------
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://formsubmit.co/dylanapps@nostressroofing.com";
 
   function setInvalid(field, bad) {
     field.classList.toggle("invalid", bad);
