@@ -40,9 +40,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- Header / nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(13, 13, 13, 0.97);
-  border-bottom: 1px solid #2a2a2a;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
 }
+.site-header .nav-links a { color: #1a1a1a; }
+.site-header .nav-links a:hover, .site-header .nav-links a.active { color: var(--gold-dark); }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   min-height: 72px; gap: 16px;
@@ -57,7 +59,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: none; background: none; border: 0; cursor: pointer; padding: 12px;
 }
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
-  display: block; width: 26px; height: 3px; background: var(--text);
+  display: block; width: 26px; height: 3px; background: #1a1a1a;
   border-radius: 2px; position: relative;
 }
 .nav-toggle span::before, .nav-toggle span::after {
@@ -260,14 +262,15 @@ img { max-width: 100%; height: auto; display: block; }
   .split { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  .nav-toggle { display: block; }
+  .site-header nav { display: contents; }
+  .nav-toggle { display: block; margin-left: auto; }
   .nav-links {
     display: none; position: absolute; top: 72px; left: 0; right: 0;
-    background: var(--bg-3); flex-direction: column; align-items: stretch;
-    padding: 12px 20px 20px; gap: 0; border-bottom: 1px solid #2a2a2a;
+    background: #ffffff; flex-direction: column; align-items: stretch;
+    padding: 12px 20px 20px; gap: 0; border-bottom: 1px solid #e8e8e8;
   }
   .nav-links.open { display: flex; }
-  .nav-links li { border-top: 1px solid #222; }
+  .nav-links li { border-top: 1px solid #eeeeee; }
   .nav-links a { display: block; padding: 14px 4px; min-height: 48px; }
   .nav-links .btn { margin-top: 12px; }
   .section { padding: 48px 0; }
