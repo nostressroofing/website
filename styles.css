@@ -200,7 +200,6 @@ img { max-width: 100%; height: auto; display: block; }
   background: #3a3a3a; cursor: pointer;
 }
 .rc-dots button.active { background: var(--gold); }
-.rc-cta { margin-top: 26px; }
 
 /* ---------- Gallery ---------- */
 .gallery {
