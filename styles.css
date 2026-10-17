@@ -100,8 +100,8 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-graphic {
   width: 100%; max-width: 880px; margin: 0 auto; display: block;
 }
-.hero-tight { padding-bottom: 20px; }
-.plans-section { padding-top: 28px; }
+.hero-tight { padding-bottom: 0; }
+.plans-section { padding-top: 0; }
 .hero .btn { margin-bottom: 0; }
 .hero-buttons { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 28px; }
 .hero-lines { text-align: center; margin: 34px 0 10px; }
