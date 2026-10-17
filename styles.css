@@ -344,3 +344,5 @@ section.plans-section { padding-top: 0; }
   .form-row { grid-template-columns: 1fr; }
   .hero { padding: 36px 0 44px; }
 }
+
+.footer-logo { display: block; margin: 0 auto 18px; height: 76px; width: auto; background: #ffffff; border-radius: 18px; padding: 8px 12px; }
