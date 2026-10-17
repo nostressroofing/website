@@ -99,6 +99,9 @@
       stop();
       timer = setInterval(function () { go(index + 1); }, 7000);
     }
+    function fit() {
+      carousel.style.height = track.children[index].offsetHeight + "px";
+    }
     function go(n) {
       index = ((n % total) + total) % total;
       track.style.transform = "translateX(" + (-index * 100) + "%)";
@@ -107,8 +110,10 @@
         d.classList.toggle("active", k === index);
         d.setAttribute("aria-selected", k === index ? "true" : "false");
       });
+      fit();
       restart();
     }
+    window.addEventListener("resize", fit);
 
     for (var k = 0; k < total; k++) {
       (function (k) {

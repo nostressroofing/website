@@ -181,10 +181,10 @@ img { max-width: 100%; height: auto; display: block; }
 .rating-line { margin-top: 14px; color: var(--muted); font-size: 16px; }
 .rating-line .stars { color: var(--gold); letter-spacing: 2px; }
 .rating-line strong { color: var(--text); }
-.reviews-carousel { position: relative; overflow: hidden; margin-top: 30px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.reviews-carousel { position: relative; overflow: hidden; margin-top: 30px; max-width: 760px; margin-left: auto; margin-right: auto; transition: height 0.35s ease; }
 .rc-photo { margin: -26px -24px 18px; aspect-ratio: 16 / 10; overflow: hidden; border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0; background: #0d0d0d; }
 .rc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.rc-track { display: flex; transition: transform 0.35s ease; }
+.rc-track { display: flex; transition: transform 0.35s ease; align-items: flex-start; }
 .rc-card { flex: 0 0 100%; margin: 0; box-sizing: border-box; }
 .rc-arrow {
   position: absolute; top: 38%; transform: translateY(-50%);
