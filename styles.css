@@ -50,6 +50,7 @@ img { max-width: 100%; height: auto; display: block; }
   min-height: 72px; gap: 16px;
 }
 .brand img { height: 52px; width: auto; }
+.header-call { display: none; }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
   color: var(--text); text-decoration: none; font-weight: 600; font-size: 16px;
@@ -317,7 +318,9 @@ section.plans-section { padding-top: 0; }
 }
 @media (max-width: 760px) {
   .site-header nav { display: contents; }
-  .nav-toggle { display: block; margin-left: auto; }
+  .nav-toggle { display: block; }
+  .brand img { height: 64px; }
+  .header-call { display: inline-block; margin: 0 auto; padding: 10px 22px; font-size: 15px; }
   .nav-links {
     display: none; position: absolute; top: 72px; left: 0; right: 0;
     background: #ffffff; flex-direction: column; align-items: stretch;
