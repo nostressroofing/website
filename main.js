@@ -84,4 +84,60 @@
   document.querySelectorAll(".js-year").forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  /* ============ Reviews carousel ============ */
+  var carousel = document.getElementById("reviewsCarousel");
+  if (carousel) {
+    var track = carousel.querySelector(".rc-track");
+    var total = track.children.length;
+    var dotsWrap = carousel.querySelector(".rc-dots");
+    var index = 0;
+    var timer = null;
+
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() {
+      stop();
+      timer = setInterval(function () { go(index + 1); }, 7000);
+    }
+    function go(n) {
+      index = ((n % total) + total) % total;
+      track.style.transform = "translateX(" + (-index * 100) + "%)";
+      var dots = dotsWrap.querySelectorAll("button");
+      dots.forEach(function (d, k) {
+        d.classList.toggle("active", k === index);
+        d.setAttribute("aria-selected", k === index ? "true" : "false");
+      });
+      restart();
+    }
+
+    for (var k = 0; k < total; k++) {
+      (function (k) {
+        var d = document.createElement("button");
+        d.type = "button";
+        d.setAttribute("role", "tab");
+        d.setAttribute("aria-label", "Show review " + (k + 1) + " of " + total);
+        d.addEventListener("click", function () { go(k); });
+        dotsWrap.appendChild(d);
+      })(k);
+    }
+
+    carousel.querySelector(".rc-prev").addEventListener("click", function () { go(index - 1); });
+    carousel.querySelector(".rc-next").addEventListener("click", function () { go(index + 1); });
+
+    var startX = null;
+    track.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      stop();
+    }, { passive: true });
+    track.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (dx < -40) go(index + 1);
+      else if (dx > 40) go(index - 1);
+      else restart();
+      startX = null;
+    }, { passive: true });
+
+    go(0);
+  }
 })();
