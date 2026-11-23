@@ -22,6 +22,22 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"RoofingContractor","name":"No Stress Roofing","url":"https://nostressroofing.com/","telephone":"+1-639-998-4303","email":"dylanapps@nostressroofing.com","address":{"@type":"PostalAddress","addressLocality":"Saskatoon","addressRegion":"SK","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":52.1332,"longitude":-106.67},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"15"},"sameAs":["https://www.facebook.com/profile.php?id=61579318808742","https://www.instagram.com/nostressroofing/"],"priceRange":"$$"}
 </script>
+<style>
+  /* Buy Now inline order forms */
+  .buy-form { display: none; text-align: left; margin-top: 18px; }
+  .buy-form.open { display: block; }
+  .buy-form .field { margin-bottom: 14px; }
+  .buy-plan { font-size: 15px; margin: 0 0 16px; }
+  .buy-plan strong { color: var(--gold); }
+  .buy-form .form-success { margin-top: 16px; }
+  .buy-form.sent .buy-fields, .buy-form.sent .buy-plan { display: none; }
+  .buy-form .form-error {
+    display: none; background: #3a1414; border: 1px solid #e05555;
+    border-radius: 10px; padding: 14px; margin-top: 16px;
+    text-align: center; color: #ffd2d2; font-size: 15px;
+  }
+  .buy-form .form-error.show { display: block; }
+</style>
 </head>
 <body>
 
@@ -67,19 +83,118 @@
         <article class="plan">
           <img src="assets/card-essential.png?v=2" alt="Essential Plan, $300 per year: annual roof report, gutter cleaning, sealant replacement, and one free repair per year up to 7 shingles">
           <div class="plan-body">
-            <a class="btn btn-gold" href="contact.html">BUY NOW</a>
+            <button type="button" class="btn btn-gold buy-now-btn" data-plan="Essential" aria-expanded="false" aria-controls="buy-essential">BUY NOW</button>
+            <form class="buy-form" id="buy-essential" novalidate>
+              <input type="hidden" name="_subject" value="New order: Essential Package ($300/year) — No Stress Roofing">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="package" value="Essential Package — $300/year">
+              <p class="buy-plan">You're ordering: <strong>Essential — $300/year</strong></p>
+              <div class="buy-fields">
+                <div class="field">
+                  <label for="buy-essential-email">Email</label>
+                  <input id="buy-essential-email" name="email" type="email" autocomplete="email" required>
+                  <p class="error">Please enter a valid email address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-essential-name">Full name</label>
+                  <input id="buy-essential-name" name="name" type="text" autocomplete="name" required>
+                  <p class="error">Please enter your full name.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-essential-address">Address</label>
+                  <input id="buy-essential-address" name="address" type="text" autocomplete="street-address" required>
+                  <p class="error">Please enter the property address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-essential-phone">Phone number</label>
+                  <input id="buy-essential-phone" name="phone" type="tel" autocomplete="tel" required>
+                  <p class="error">Please enter a valid phone number.</p>
+                </div>
+                <button class="btn btn-gold" type="submit" style="width:100%">Send Email</button>
+              </div>
+              <div class="form-success" role="status">
+                <p><strong>Thanks! Your order is on its way.</strong><br>Someone will be in touch within 1–2 business days.</p>
+              </div>
+              <p class="form-error" role="alert">Something went wrong sending your order. Please try again, or call us at +1-639-998-4303.</p>
+            </form>
           </div>
         </article>
         <article class="plan">
           <img src="assets/card-premium.png" alt="Premium Plan, $500 per year: everything in Essential, plus annual branch trimming, second gutter cleaning spring and fall, 72-hour priority response, and one free repair per year up to 10 shingles">
           <div class="plan-body">
-            <a class="btn btn-gold" href="contact.html">BUY NOW</a>
+            <button type="button" class="btn btn-gold buy-now-btn" data-plan="Premium" aria-expanded="false" aria-controls="buy-premium">BUY NOW</button>
+            <form class="buy-form" id="buy-premium" novalidate>
+              <input type="hidden" name="_subject" value="New order: Premium Package ($500/year) — No Stress Roofing">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="package" value="Premium Package — $500/year">
+              <p class="buy-plan">You're ordering: <strong>Premium — $500/year</strong></p>
+              <div class="buy-fields">
+                <div class="field">
+                  <label for="buy-premium-email">Email</label>
+                  <input id="buy-premium-email" name="email" type="email" autocomplete="email" required>
+                  <p class="error">Please enter a valid email address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-premium-name">Full name</label>
+                  <input id="buy-premium-name" name="name" type="text" autocomplete="name" required>
+                  <p class="error">Please enter your full name.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-premium-address">Address</label>
+                  <input id="buy-premium-address" name="address" type="text" autocomplete="street-address" required>
+                  <p class="error">Please enter the property address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-premium-phone">Phone number</label>
+                  <input id="buy-premium-phone" name="phone" type="tel" autocomplete="tel" required>
+                  <p class="error">Please enter a valid phone number.</p>
+                </div>
+                <button class="btn btn-gold" type="submit" style="width:100%">Send Email</button>
+              </div>
+              <div class="form-success" role="status">
+                <p><strong>Thanks! Your order is on its way.</strong><br>Someone will be in touch within 1–2 business days.</p>
+              </div>
+              <p class="form-error" role="alert">Something went wrong sending your order. Please try again, or call us at +1-639-998-4303.</p>
+            </form>
           </div>
         </article>
         <article class="plan featured">
           <img src="assets/card-blizzard.png" alt="Blizzard Plan, $900 per year: everything in Premium, plus mid-winter snow removal, walkway clearing, and one free repair per year up to 15 shingles">
           <div class="plan-body">
-            <a class="btn btn-gold" href="contact.html">BUY NOW</a>
+            <button type="button" class="btn btn-gold buy-now-btn" data-plan="Blizzard" aria-expanded="false" aria-controls="buy-blizzard">BUY NOW</button>
+            <form class="buy-form" id="buy-blizzard" novalidate>
+              <input type="hidden" name="_subject" value="New order: Blizzard Package ($900/year) — No Stress Roofing">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="package" value="Blizzard Package — $900/year">
+              <p class="buy-plan">You're ordering: <strong>Blizzard — $900/year</strong></p>
+              <div class="buy-fields">
+                <div class="field">
+                  <label for="buy-blizzard-email">Email</label>
+                  <input id="buy-blizzard-email" name="email" type="email" autocomplete="email" required>
+                  <p class="error">Please enter a valid email address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-blizzard-name">Full name</label>
+                  <input id="buy-blizzard-name" name="name" type="text" autocomplete="name" required>
+                  <p class="error">Please enter your full name.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-blizzard-address">Address</label>
+                  <input id="buy-blizzard-address" name="address" type="text" autocomplete="street-address" required>
+                  <p class="error">Please enter the property address.</p>
+                </div>
+                <div class="field">
+                  <label for="buy-blizzard-phone">Phone number</label>
+                  <input id="buy-blizzard-phone" name="phone" type="tel" autocomplete="tel" required>
+                  <p class="error">Please enter a valid phone number.</p>
+                </div>
+                <button class="btn btn-gold" type="submit" style="width:100%">Send Email</button>
+              </div>
+              <div class="form-success" role="status">
+                <p><strong>Thanks! Your order is on its way.</strong><br>Someone will be in touch within 1–2 business days.</p>
+              </div>
+              <p class="form-error" role="alert">Something went wrong sending your order. Please try again, or call us at +1-639-998-4303.</p>
+            </form>
           </div>
         </article>
       </div>
@@ -111,7 +226,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.5v3H11v7h2.5z"/></svg>
       </a>
       <a href="https://www.instagram.com/nostressroofing/" aria-label="No Stress Roofing on Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8zm0-2.1a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6zm6.8-.3a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zM12 4.2c-2.5 0-2.9 0-3.9.1-1 .1-1.7.2-2.3.5-.6.2-1 .5-1.5 1-.4.4-.7.9-1 1.5-.2.6-.4 1.3-.5 2.3-.1 1-.1 1.4-.1 3.9s0 2.9.1 3.9c.1 1 .2 1.7.5 2.3.2.6.5 1 1 1.5.4.4.9.7 1.5 1 .6.2 1.3.4 2.3.5 1 .1 1.4.1 3.9.1s2.9 0 3.9-.1c1-.1 1.7-.2 2.3-.5.6-.2 1-.5 1.5-1 .4-.4.7-.9 1-1.5.2-.6.4-1.3.5-2.3.1-1 .1-1.4.1-3.9s0-2.9-.1-3.9c-.1-1-.2-1.7-.5-2.3-.2-.6-.5-1-1-1.5-.4-.4-.9-.7-1.5-1-.6-.2-1.3-.4-2.3-.5-1-.1-1.4-.1-3.9-.1z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8zm0-2.1a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6zm6.8-.3a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zM12 4.2c-2.5 0-2.9 0-3.9.1-1 .1-1.7.2-2.3.5-.6.2-1 .5-1.5 1-.4.4-.7.9-1 1.5-.2.6-.4 1.3-.5 2.3-.1 1-.1 1.4-.1 3.9s0 2.9.1 3.9c.1 1 .2 1.7.5 2.3.2.6.5 1 1 1.5.4.4.9.7 1.5 1 .6.2 1.3.4 2.3.5 1 .1 1.4.1 3.9.1s2.9 0 3.9-.1c1-.1 1.7-.2 2.3-.5.6-.2 1-.5 1.5-1 .4-.4.7-.9 1-1.5.2.6.4 1.3.5 2.3-.1 1-.1 1.4-.1 3.9s0-2.9-.1-3.9c-.1-1-.2-1.7-.5-2.3-.2-.6-.5-1-1-1.5-.4-.4-.9-.7-1.5-1-.6-.2-1.3-.4-2.3-.5-1-.1-1.4-.1-3.9-.1z"/></svg>
       </a>
     </div>
     <div class="footer-contact">
@@ -125,5 +240,103 @@
 </footer>
 
 <script src="main.js?v=6"></script>
+<script>
+/* Buy Now inline order forms — one per plan card. Same FormSubmit
+   endpoint as the quote form, so orders land in the business inbox. */
+(function () {
+  "use strict";
+  var ENDPOINT = "https://formsubmit.co/ajax/dylanapps@nostressroofing.com";
+
+  function validEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+  function setInvalid(field, bad) {
+    field.classList.toggle("invalid", bad);
+    return !bad;
+  }
+  function resetFormState(form) {
+    form.classList.remove("sent");
+    var s = form.querySelector(".form-success");
+    if (s) s.classList.remove("show");
+    var err = form.querySelector(".form-error");
+    if (err) err.classList.remove("show");
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = false; btn.textContent = "Send Email"; }
+    form.reset();
+  }
+
+  /* Toggle: Buy Now opens its card's form, closes the others. */
+  document.querySelectorAll(".buy-now-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var form = document.getElementById(btn.getAttribute("aria-controls"));
+      if (!form) return;
+      var willOpen = !form.classList.contains("open");
+      document.querySelectorAll(".buy-form.open").forEach(function (f) {
+        f.classList.remove("open");
+      });
+      document.querySelectorAll(".buy-now-btn").forEach(function (b) {
+        b.setAttribute("aria-expanded", "false");
+      });
+      if (willOpen) {
+        resetFormState(form);
+        form.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        var first = form.querySelector("input[name='email']");
+        if (first) first.focus();
+      }
+    });
+  });
+
+  /* Submit: validate, send via FormSubmit AJAX, show the 1–2 day note. */
+  document.querySelectorAll(".buy-form").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      var email = form.querySelector('[name="email"]');
+      var name = form.querySelector('[name="name"]');
+      var address = form.querySelector('[name="address"]');
+      var phone = form.querySelector('[name="phone"]');
+      ok = setInvalid(email.closest(".field"), !validEmail(email.value.trim())) && ok;
+      ok = setInvalid(name.closest(".field"), name.value.trim().length < 2) && ok;
+      ok = setInvalid(address.closest(".field"), address.value.trim().length < 3) && ok;
+      ok = setInvalid(phone.closest(".field"), phone.value.trim().length < 7) && ok;
+      if (!ok) {
+        var firstBad = form.querySelector(".field.invalid input");
+        if (firstBad) firstBad.focus();
+        return;
+      }
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      fetch(ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("send failed");
+          form.classList.add("sent");
+          var s = form.querySelector(".form-success");
+          if (s) {
+            s.classList.add("show");
+            s.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        })
+        .catch(function () {
+          var err = form.querySelector(".form-error");
+          if (err) err.classList.add("show");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Email";
+        });
+    });
+
+    form.querySelectorAll("input").forEach(function (el) {
+      el.addEventListener("input", function () {
+        el.closest(".field").classList.remove("invalid");
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
